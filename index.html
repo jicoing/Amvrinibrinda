@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="https://github.com/jicoing/Kavyanjali/blob/main/favicon1.PNG?raw=true">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="অম্ভৃণী বৃন্দ | Amvrinibrinda - Women priests in Kolkata">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jicoing.github.io/Kavyanjali">
+    <meta property="og:title" content="অম্ভৃণী বৃন্দ | Amvrinibrinda">
+    <meta property="og:description" content="Transforming communities through verse and virtuous action">
+    <meta property="og:image" content="https://github.com/jicoing/Kavyanjali/blob/main/favicon1.PNG?raw=true">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jicoing.github.io/Kavyanjali">
+    <meta property="twitter:title" content="অম্ভৃণী বৃন্দ | Amvrinibrinda">
+    <meta property="twitter:description" content="Transforming communities through verse and virtuous action">
+    <meta property="twitter:image" content="https://github.com/jicoing/Kavyanjali/blob/main/favicon1.PNG?raw=true">
+
+    <title>অম্ভৃণী বৃন্দ | Amvrinibrinda</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
+    <style>
+        :root {
+            --primary: #502c3a;
+            --secondary: #3498db;
+            --accent: #e67e22;
+        }
+        
+        .hero {
+        position: relative;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        animation: fade 12s infinite;
+    }
+
+    .hero::before {
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('poetry-hero1.jpg');
+        animation-delay: 0s;
+    }
+
+    .hero::after {
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://github.com/jicoing/Kavyanjali/blob/main/poetry-hero2.jpg?raw=true');
+        animation-delay: 6s;
+    }
+
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    @keyframes fade {
+        0% { opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+        .initiative-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            transition: transform 0.3s;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .gallery-grid {
+            columns: 3 250px;
+            gap: 1rem;
+        }
+
+        .poem-excerpt {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin: 2rem 0;
+            font-style: italic;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust minmax as needed */
+            gap: 10px; /* Adjust gap as needed */
+        }
+
+        .gallery-item {
+            display: block; /* Make the link a block-level element */
+        }
+
+        .gallery-item img {
+            width: 100%; /* Make the image fill the container */
+            height: 200px; /*  Set your desired fixed height */
+            object-fit: cover; /*  Important:  Crop to fill, maintaining aspect ratio */
+            display: block; /* Remove extra space below image */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Amvrinibrinda</strong></li>
+            <li class="mobile-menu">
+                <details role="list">
+                    <summary aria-haspopup="listbox">☰</summary>
+                    <ul role="listbox">
+                        <li><a href="#about">Mission</a></li>
+                        <li><a href="#team">Creators</a></li>
+                        <li><a href="#gallery">Moments</a></li>
+                        <li><a href="#contact">Join</a></li>
+                    </ul>
+                </details>
+            </li>
+        </ul>
+        <ul class="desktop-menu">
+            <!-- Existing desktop menu items -->
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+
+            <h1>অম্ভৃণী বৃন্দ</h1>
+            <p>Harnessing the power of puja for social transformation</p>
+        </div>
+    </header>
+
+    <!-- Mission Section -->
+    <section id="about" class="container">
+        <h2>আমাদের প্রতিশ্রুতি</h2>
+        <p>আমরা কয়েকজন বাঙালি নারী একত্রিত হয়েছি পৌরোহিত্যের পুরুষতান্ত্রিক প্রথাকে চ্যালেঞ্জ জানাতে। আমাদের লক্ষ্য সমাজে লিঙ্গ সমতা আনা এবং নারীদের জন্য একটি নতুন দিগন্ত উন্মোচন করা। আমরা বিশ্বাস করি, ধর্ম এবং আধ্যাত্মিকতায় নারীর সমান অধিকার থাকা উচিত।</p>
+        <p>Puja has long been a powerful force for social change, giving voice to the oppressed, challenging injustice, and inspiring movements. Through its emotional depth and rhythmic expression, puja transcends barriers.</p>
+        <div class="grid">
+            <article>
+                <h3>মনসাপূজা</h3>
+                <p>মনসাপূজা দিয়ে পথ চলা শুরু কল্যানীর A-2/202 বাড়ি তে ২৭/৮/২০২১</p>
+            </article>
+            <article>
+                <h3>দুর্গা পূজা</h3>
+                <p>এরপর দূর্গা পূজা করি আমরা চাকদহ বুড়িমাতলায়</p>
+            </article>
+            <article>
+                <h3>গণেশ পূজা</h3>
+                <p>গণেশ বন্দনায় রত আমরা AmvriniBrinda।
+                    এভাবেই আপনাদের ভালোবাসায় ও উৎসাহে বলিয়ান হয়ে আমরা গনেশ দেবের পূজো করতে চলে এসেছিলাম:
+                    
+                    Aster Gardens Complex, Rajarhat Chowmatha, Kalaberia, Kolkata 700135
+                    p.c- Rrui Raja Saha</p>
+            </article>
+        </div>
+        
+        <div class="poem-excerpt">
+            "এসো মিলি সবে, হাতে হাত ধরি,<br>
+            নতুন সমাজ গড়ি, ভেদাভেদ পরিহরি।<br>
+            আলো ঝলমলে এক পৃথিবী চাই,<br>
+            যেখানে সকলে বাঁচে, মিলেমিশে ভাই।"
+        </div>
+    </section>
+
+
+
+    <!-- Creators Section -->
+    <section id="team" class="container">
+        
+
+        </div>
+        <div class="initiative-grid">
+            <article class="event-card">
+                <img src="v1.JPG" alt="Founder" loading="lazy">
+                <div class="content">
+                    <h3>রাখী ভট্টাচার্য</h3>
+                    <p>প্রতিষ্ঠাতা ও সৃজনশীল পরিচালক</p>
+                    <p>Founder & Creative Director</p>
+                </div>
+            </article>
+
+            
+        </div>
+    </section>
+    
+    <!-- Gallery -->
+    <section id="gallery" class="container">
+        <h2>পূজার মুহূর্ত</h2>
+        <div class="gallery-grid">
+            <a href="g1.JPG" class="gallery-item">
+                <img src="g1.JPG" alt="Puja momments" loading="lazy">
+            </a>
+            <a href="g2.JPG" class="gallery-item">
+                <img src="g2.JPG" alt="Puja momments" loading="lazy">
+            </a>
+            <a href="g3.JPG" class="gallery-item">
+                <img src="g3.JPG" alt="Puja momments" loading="lazy">
+            </a>
+            <a href="g4.JPG" class="gallery-item">
+                <img src="g4.JPG" alt="Puja momments" loading="lazy">
+            </a>
+            <a href="g5.JPG" class="gallery-item">
+                <img src="g5.JPG" alt="Puja momments" loading="lazy">
+            </a>
+            
+            <a href="g7.JPG" class="gallery-item">
+                <img src="g7.JPG" alt="Puja momments" loading="lazy">
+            </a>
+            <a href="g8.JPG" class="gallery-item">
+                <img src="g8.JPG" alt="Puja momments" loading="lazy">
+            </a>
+            <a href="v4.JPG" class="gallery-item">
+                <img src="v4.JPG" alt="Group photo" loading="lazy">
+            </a>
+        </div>
+        
+    </section>
+    <!-- Gallery -->
+    <section id="gallery" class="container">
+        <h2>খবর এবং মিডিয়া</h2>
+        <div class="gallery-grid">
+            <a href="i1.JPG" class="gallery-item">
+                <img src="i1.JPG" alt="TV interview" loading="lazy">
+            </a>
+            <a href="v2.JPG" class="gallery-item">
+                <img src="v2.JPG" alt="Newspaper article" loading="lazy">
+            </a>
+            <a href="v3.JPG" class="gallery-item">
+                <img src="v3.JPG" alt="Group photo" loading="lazy">
+            </a>
+            
+        </div>
+        
+    </section>
+
+    
+
+    <!-- Contact -->
+    <section id="contact" class="container">
+        <h2>Join the Movement</h2>
+        <div class="grid">
+            
+            <div>
+                <h3>Collaborate</h3>
+                <p>ইমেইল:<br>
+                <a href="">rakhi@gmail.com</a></p>
+            </div>
+            <div>
+                <h3>Collaborate</h3>
+                <p>ওয়াটসঅ্যাপ<br>
+                <a href="">9855XXXXX</a></p>
+            </div>
+        </div>
+    </section>
+<!-- Developer: Jayanjan Mukherjee -->
+<!-- Email: jicoing@gmail.com -->
+<!-- GitHub: https://github.com/jicoing -->
+<!-- Created on: February 12, 2025 -->
+
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.min.js"></script>
+    <script>
+        // Image Gallery initialization
+        lightGallery(document.getElementById('gallery'), {
+            selector: '.gallery-item',
+            download: false
+        });
+
+        // Lazy Load implementation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            observer.observe(img);
+        });
+    </script>
+
+    <footer class="container">
+        <div class="grid">
+            <div>
+                <small>
+                    © 2023 Amvrinibrinda • 
+                    
+                </small>
+            </div>
+            <div>
+                <small>
+                    আমাদের সাথে যোগাযোগ করুন:<br>
+                    <a href="https://facebook.com/kavyanjali">Facebook</a> •
+                    <a href="https://instagram.com/kavyanjali">Instagram</a> •
+                    <a href="https://youtube.com/kavyanjali">YouTube</a>
+                </small>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
