@@ -264,6 +264,35 @@
             color: #000;
             cursor: pointer;
         }
+        .desktop-menu {
+            display: none;
+        }
+
+        /* Show mobile menu by default */
+        .mobile-menu {
+            display: block;
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .desktop-menu {
+                display: flex;
+                gap: 1.5rem;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                align-items: center;
+            }
+
+            .mobile-menu {
+                display: none;
+            }
+
+            /* Optional: Add hover effects for desktop menu */
+            .desktop-menu a:hover {
+                color: var(--accent);
+            }
+        }
 
 
     </style>
@@ -286,7 +315,10 @@
             </li>
         </ul>
         <ul class="desktop-menu">
-            <!-- Existing desktop menu items -->
+            <li><a href="#about">Mission</a></li>
+            <li><a href="#team">Creators</a></li>
+            <li><a href="#gallery">Moments</a></li>
+            <li><a href="#contact" >Join</a></li>
         </ul>
     </nav>
 
