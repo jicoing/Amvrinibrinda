@@ -151,59 +151,42 @@
             width: 100%;
             height: 100%;
         }
-        /* Gallery Wrapper */
+        /* Replace the existing gallery styles with these: */
         .gallery-wrapper {
-            overflow: hidden; /* Hide overflow */
-            width: 100%; /* Full width of the container */
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 1rem;
         }
 
-        /* Gallery Grid */
         .gallery-grid {
-            display: flex; /* Flexbox for horizontal alignment */
-            transition: transform 0.5s ease-in-out; /* Smooth scrolling effect */
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem 0;
         }
 
-        /* Gallery Item */
         .gallery-item {
-            flex: 0 0 calc(100% / 3); /* Default: 3 items visible (33.33% width each) */
-            box-sizing: border-box; /* Include padding/border in width calculations */
-            padding: 10px; /* Optional spacing between items */
+            flex: 0 0 auto;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
         }
 
-        /* Thumbnail Images */
-        .gallery-item img {
-            width: 100%; /* Ensure images fit within their container */
-            height: 150px; /* Set a fixed height for all thumbnails */
-            object-fit: cover; /* Maintain aspect ratio while covering the area */
-        }
-
-        /* Responsive Design: Adjust number of visible items based on screen size */
-
-        /* Large screens (4 items visible) */
-        @media (min-width: 1200px) {
+        /* Responsive Sizes */
+        @media (max-width: 768px) {
             .gallery-item {
-                flex: 0 0 calc(100% / 4); /* 25% width each */
+                width: 250px;
+                height: 180px;
             }
         }
 
-        /* Medium screens (3 items visible) */
-        @media (min-width: 768px) and (max-width: 1199px) {
+        @media (max-width: 480px) {
             .gallery-item {
-                flex: 0 0 calc(100% / 3); /* 33.33% width each */
-            }
-        }
-
-        /* Small screens (2 items visible) */
-        @media (min-width: 480px) and (max-width: 767px) {
-            .gallery-item {
-                flex: 0 0 calc(100% / 2); /* 50% width each */
-            }
-        }
-
-        /* Extra small screens (1 item visible) */
-        @media (max-width: 479px) {
-            .gallery-item {
-                flex: 0 0 calc(100%); /* Full width for each item */
+                width: 200px;
+                height: 150px;
             }
         }
         .modal {
@@ -463,136 +446,7 @@
     </section>
 
 
-    <script>
-
-       // Function to calculate visible items dynamically based on screen size
-        function getItemsToShow() {
-            const screenWidth = window.innerWidth;
-
-            if (screenWidth >= 1200) return 4; // Large screens
-            if (screenWidth >= 768) return 3; // Medium screens
-            if (screenWidth >= 480) return 2; // Small screens
-            return 1; // Extra small screens
-        }
-
-        // Function to initialize scrolling for a specific gallery grid
-        function initializeGalleryScrolling(gridId) {
-            const galleryGrid = document.getElementById(gridId);
-            
-            // Initialize variables for scrolling
-            let currentIndex = 0;
-            let itemsToShow = getItemsToShow(); // Get initial number of visible items
-            const totalItems = galleryGrid.querySelectorAll('.gallery-item').length;
-
-            // Function to scroll the gallery
-            function scrollGallery() {
-                currentIndex++;
-
-                // If we've reached the end, reset to the beginning
-                if (currentIndex >= totalItems - itemsToShow + 1) {
-                    currentIndex = 0;
-                }
-
-                // Calculate the offset for translation
-                const offset = -currentIndex * (100 / itemsToShow);
-
-                // Apply the transform to scroll the gallery
-                galleryGrid.style.transform = `translateX(${offset}%)`;
-            }
-
-            // Update `itemsToShow` dynamically on window resize
-            window.addEventListener('resize', () => {
-                itemsToShow = getItemsToShow();
-                currentIndex = Math.min(currentIndex, totalItems - itemsToShow); // Adjust current index if needed
-                scrollGallery(); // Adjust position after resizing
-            });
-
-            // Set an interval to scroll every 3 seconds
-            setInterval(scrollGallery, 5000);
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        let currentIndex = 0;
-
-        // Function to open the modal with the clicked image
-        function openModal(index) {
-            currentIndex = index;
-            const imageUrl = galleryItems[index].getAttribute('href');
-
-            // Create the modal structure
-            const modal = document.createElement('div');
-            modal.classList.add('modal');
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <span class="close-button">&times;</span>
-                    <img src="${imageUrl}" alt="Full Image">
-                    <div class="navigation">
-                        <button class="nav-button prev">Previous</button>
-                        <button class="nav-button next">Next</button>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(modal);
-
-            // Add event listeners for navigation buttons
-            const prevButton = modal.querySelector('.prev');
-            const nextButton = modal.querySelector('.next');
-            const closeButton = modal.querySelector('.close-button');
-
-            prevButton.addEventListener('click', navigateToPrevious);
-            nextButton.addEventListener('click', navigateToNext);
-            closeButton.addEventListener('click', closeModal);
-
-            // Close the modal if clicked outside the content
-            modal.addEventListener('click', function(event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
-            // Prevent scrolling on the background when the modal is open
-            document.body.style.overflow = 'hidden';
-            }
-
-            // Function to navigate to the previous image
-            function navigateToPrevious() {
-                currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-                updateModalImage();
-            }
-
-            // Function to navigate to the next image
-            function navigateToNext() {
-                currentIndex = (currentIndex + 1) % galleryItems.length;
-                updateModalImage();
-            }
-
-            // Function to update the modal image
-            function updateModalImage() {
-                const modalImage = document.querySelector('.modal-content img');
-                modalImage.src = galleryItems[currentIndex].getAttribute('href');
-            }
-
-            // Function to close the modal
-            function closeModal() {
-                const modal = document.querySelector('.modal');
-                modal.remove();
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-            }
-
-            // Attach click event to each gallery item
-            galleryItems.forEach((item, index) => {
-                item.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default link behavior
-                    openModal(index);
-                });
-            });
-        });
-        // Initialize scrolling for both galleries
-        initializeGalleryScrolling('grid1');
-        initializeGalleryScrolling('grid2');
-
-    </script>
-
+    
 
 
 
