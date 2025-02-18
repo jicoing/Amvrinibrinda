@@ -293,6 +293,18 @@
                 color: var(--accent);
             }
         }
+        .hero-content {
+            animation: fadeOut 10s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
 
 
     </style>
@@ -390,50 +402,56 @@
     
     <!-- Gallery 1 -->
     <section id="gallery1" class="container">
-        <h2>পূজার মুহূর্ত</h2>
-        <div class="gallery-wrapper">
-            <div class="gallery-grid" id="grid1">
-                <a href="g1.JPG" class="gallery-item">
-                    <img src="g1.JPG" alt="Puja moments" loading="lazy">
-                </a>
-                <a href="g2.JPG" class="gallery-item">
-                    <img src="g2.JPG" alt="Puja moments" loading="lazy">
-                </a>
-                <a href="g3.JPG" class="gallery-item">
-                    <img src="g3.JPG" alt="Puja moments" loading="lazy">
-                </a>
-                <a href="g4.JPG" class="gallery-item">
-                    <img src="g4.JPG" alt="Puja moments" loading="lazy">
-                </a>
-                <a href="g5.JPG" class="gallery-item">
-                    <img src="g5.JPG" alt="Puja moments" loading="lazy">
-                </a>
-                <a href="g7.JPG" class="gallery-item">
-                    <img src="g7.JPG" alt="Puja moments" loading="lazy">
-                </a>
-                <a href="g8.JPG" class="gallery-item">
-                    <img src="g8.JPG" alt="Puja moments" loading="lazy">
-                </a>
-                <a href="v4.JPG" class="gallery-item">
-                    <img src="v4.JPG" alt="Group photo" loading="lazy">
-                </a>
-                <a href="g9.PNG" class="gallery-item">
-                    <img src="g9.PNG" alt="Group photo" loading="lazy">
-                </a>
-    
-                <a href="g11.PNG" class="gallery-item">
-                    <img src="g11.PNG" alt="Group photo" loading "lazy">
-                </a>
-                <a href="g12.PNG" class="gallery-item">
-                    <img src="g12.PNG" alt="Group photo" loading "lazy">
-                </a>
-                <a href="g13.PNG" class="gallery-item">
-                    <img src="g13.PNG" alt="Group photo" loading "lazy">
-                </a>
-                <a href="g14.PNG" class "gallery-item">
-                    <img src="g14.PNG" alt "Group photo" loading "lazy">
-                </a>
-            </div>
+        <div class="initiative-grid">
+            <article class="event-card">
+                <h2>পূজার মুহূর্ত</h2>
+                <div class="gallery-wrapper">
+                    <div class="gallery-grid" id="grid1">
+                        <a href="g1.JPG" class="gallery-item">
+                            <img src="g1.JPG" alt="Puja moments" loading="lazy">
+                        </a>
+                        <a href="g2.JPG" class="gallery-item">
+                            <img src="g2.JPG" alt="Puja moments" loading="lazy">
+                        </a>
+                        <a href="g3.JPG" class="gallery-item">
+                            <img src="g3.JPG" alt="Puja moments" loading="lazy">
+                        </a>
+                        <a href="g4.JPG" class="gallery-item">
+                            <img src="g4.JPG" alt="Puja moments" loading="lazy">
+                        </a>
+                        <a href="g5.JPG" class="gallery-item">
+                            <img src="g5.JPG" alt="Puja moments" loading="lazy">
+                        </a>
+                        <a href="g7.JPG" class="gallery-item">
+                            <img src="g7.JPG" alt="Puja moments" loading="lazy">
+                        </a>
+                        <a href="g8.JPG" class="gallery-item">
+                            <img src="g8.JPG" alt="Puja moments" loading="lazy">
+                        </a>
+                        <a href="v4.JPG" class="gallery-item">
+                            <img src="v4.JPG" alt="Group photo" loading="lazy">
+                        </a>
+                        <a href="g9.PNG" class="gallery-item">
+                            <img src="g9.PNG" alt="Group photo" loading="lazy">
+                        </a>
+            
+                        <a href="g11.PNG" class="gallery-item">
+                            <img src="g11.PNG" alt="Group photo" loading "lazy">
+                        </a>
+                        <a href="g12.PNG" class="gallery-item">
+                            <img src="g12.PNG" alt="Group photo" loading "lazy">
+                        </a>
+                        <a href="g13.PNG" class="gallery-item">
+                            <img src="g13.PNG" alt="Group photo" loading "lazy">
+                        </a>
+                        <a href="g14.PNG" class "gallery-item">
+                            <img src="g14.PNG" alt "Group photo" loading "lazy">
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            
         </div>
     </section>
 
@@ -501,7 +519,7 @@
             });
 
             // Set an interval to scroll every 3 seconds
-            setInterval(scrollGallery, 3000);
+            setInterval(scrollGallery, 5000);
         }
         document.addEventListener('DOMContentLoaded', function() {
         const galleryItems = document.querySelectorAll('.gallery-item');
