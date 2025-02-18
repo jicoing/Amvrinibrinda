@@ -165,17 +165,48 @@
 
         /* Gallery Item */
         .gallery-item {
-            flex: 0 0 25%; /* Each item takes 25% of the container width (4 items visible) */
+            flex: 0 0 calc(100% / 3); /* Default: 3 items visible (33.33% width each) */
             box-sizing: border-box; /* Include padding/border in width calculations */
             padding: 10px; /* Optional spacing between items */
         }
 
-        /* Fixed Size for Thumbnails */
+        /* Thumbnail Images */
         .gallery-item img {
             width: 100%; /* Ensure images fit within their container */
             height: 150px; /* Set a fixed height for all thumbnails */
             object-fit: cover; /* Maintain aspect ratio while covering the area */
         }
+
+        /* Responsive Design: Adjust number of visible items based on screen size */
+
+        /* Large screens (4 items visible) */
+        @media (min-width: 1200px) {
+            .gallery-item {
+                flex: 0 0 calc(100% / 4); /* 25% width each */
+            }
+        }
+
+        /* Medium screens (3 items visible) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .gallery-item {
+                flex: 0 0 calc(100% / 3); /* 33.33% width each */
+            }
+        }
+
+        /* Small screens (2 items visible) */
+        @media (min-width: 480px) and (max-width: 767px) {
+            .gallery-item {
+                flex: 0 0 calc(100% / 2); /* 50% width each */
+            }
+        }
+
+        /* Extra small screens (1 item visible) */
+        @media (max-width: 479px) {
+            .gallery-item {
+                flex: 0 0 calc(100%); /* Full width for each item */
+            }
+        }
+
 
 
     </style>
@@ -323,10 +354,20 @@
         // Select the gallery grid
         const galleryGrid = document.querySelector('.gallery-grid');
 
-        // Define variables for scrolling
+        // Function to calculate visible items dynamically based on screen size
+        function getItemsToShow() {
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth >= 1200) return 4; // Large screens
+            if (screenWidth >= 768) return 3; // Medium screens
+            if (screenWidth >= 480) return 2; // Small screens
+            return 1; // Extra small screens
+        }
+
+        // Initialize variables for scrolling
         let currentIndex = 0;
+        let itemsToShow = getItemsToShow(); // Get initial number of visible items
         const totalItems = document.querySelectorAll('.gallery-item').length;
-        const itemsToShow = 3; // Number of items visible at a time
 
         // Function to scroll the gallery
         function scrollGallery() {
@@ -339,10 +380,15 @@
 
             // Calculate the offset for translation
             const offset = -currentIndex * (100 / itemsToShow);
-            
+
             // Apply the transform to scroll the gallery
             galleryGrid.style.transform = `translateX(${offset}%)`;
         }
+
+        // Update `itemsToShow` dynamically on window resize
+        window.addEventListener('resize', () => {
+            itemsToShow = getItemsToShow();
+        });
 
         // Set an interval to scroll every 3 seconds
         setInterval(scrollGallery, 3000);
