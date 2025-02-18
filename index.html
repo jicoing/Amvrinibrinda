@@ -206,7 +206,64 @@
                 flex: 0 0 calc(100%); /* Full width for each item */
             }
         }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure it's on top */
+        }
 
+        .modal-content {
+            position: relative;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .nav-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            cursor: pointer;
+        }
 
 
     </style>
@@ -331,7 +388,7 @@
                 <a href="g9.PNG" class="gallery-item">
                     <img src="g9.PNG" alt="Group photo" loading="lazy">
                 </a>
-
+    
                 <a href="g11.PNG" class="gallery-item">
                     <img src="g11.PNG" alt="Group photo" loading "lazy">
                 </a>
@@ -341,8 +398,8 @@
                 <a href="g13.PNG" class="gallery-item">
                     <img src="g13.PNG" alt="Group photo" loading "lazy">
                 </a>
-                <a href "g14.PNG" class "gallery-item">
-                    <img src "g14.PNG" alt "Group photo" loading "lazy">
+                <a href="g14.PNG" class "gallery-item">
+                    <img src="g14.PNG" alt "Group photo" loading "lazy">
                 </a>
             </div>
         </div>
@@ -414,7 +471,83 @@
             // Set an interval to scroll every 3 seconds
             setInterval(scrollGallery, 3000);
         }
+        document.addEventListener('DOMContentLoaded', function() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        let currentIndex = 0;
 
+        // Function to open the modal with the clicked image
+        function openModal(index) {
+            currentIndex = index;
+            const imageUrl = galleryItems[index].getAttribute('href');
+
+            // Create the modal structure
+            const modal = document.createElement('div');
+            modal.classList.add('modal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <img src="${imageUrl}" alt="Full Image">
+                    <div class="navigation">
+                        <button class="nav-button prev">Previous</button>
+                        <button class="nav-button next">Next</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            // Add event listeners for navigation buttons
+            const prevButton = modal.querySelector('.prev');
+            const nextButton = modal.querySelector('.next');
+            const closeButton = modal.querySelector('.close-button');
+
+            prevButton.addEventListener('click', navigateToPrevious);
+            nextButton.addEventListener('click', navigateToNext);
+            closeButton.addEventListener('click', closeModal);
+
+            // Close the modal if clicked outside the content
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Prevent scrolling on the background when the modal is open
+            document.body.style.overflow = 'hidden';
+            }
+
+            // Function to navigate to the previous image
+            function navigateToPrevious() {
+                currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                updateModalImage();
+            }
+
+            // Function to navigate to the next image
+            function navigateToNext() {
+                currentIndex = (currentIndex + 1) % galleryItems.length;
+                updateModalImage();
+            }
+
+            // Function to update the modal image
+            function updateModalImage() {
+                const modalImage = document.querySelector('.modal-content img');
+                modalImage.src = galleryItems[currentIndex].getAttribute('href');
+            }
+
+            // Function to close the modal
+            function closeModal() {
+                const modal = document.querySelector('.modal');
+                modal.remove();
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+
+            // Attach click event to each gallery item
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    openModal(index);
+                });
+            });
+        });
         // Initialize scrolling for both galleries
         initializeGalleryScrolling('grid1');
         initializeGalleryScrolling('grid2');
