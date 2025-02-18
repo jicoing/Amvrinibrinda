@@ -299,11 +299,11 @@
         </div>
     </section>
     
-    <!-- Gallery -->
-    <section id="gallery" class="container">
+    <!-- Gallery 1 -->
+    <section id="gallery1" class="container">
         <h2>পূজার মুহূর্ত</h2>
         <div class="gallery-wrapper">
-            <div class="gallery-grid">
+            <div class="gallery-grid" id="grid1">
                 <a href="g1.JPG" class="gallery-item">
                     <img src="g1.JPG" alt="Puja moments" loading="lazy">
                 </a>
@@ -332,30 +332,20 @@
                     <img src="g9.PNG" alt="Group photo" loading="lazy">
                 </a>
                 <a href="g10.PNG" class="gallery-item">
-                    <img src="g10.PNG" alt="Group photo" loading="lazy">
+                    <img src="g10.PNG" alt="Group photo" loading "lazy">
                 </a>
-                <a href="g14.PNG" class="gallery-item">
-                    <img src="g14.PNG" alt="Group photo" loading="lazy">
-                </a>
-                <a href="g11.PNG" class="gallery-item">
-                    <img src="g11.PNG" alt="Group photo" loading="lazy">
-                </a>
-                <a href="g12.PNG" class="gallery-item">
-                    <img src="g12.PNG" alt "Group photo" loading "lazy">
-                </a>
-                <a href "g13.PNG" class "gallery-item">
-                    <img src "g13.PNG" alt "Group photo" loading "lazy">
+                <a href "g14.PNG" class "gallery-item">
+                    <img src "g14.PNG" alt "Group photo" loading "lazy">
                 </a>
             </div>
         </div>
     </section>
 
-
-    <!-- Gallery -->
-    <section id="gallery" class="container">
+    <!-- Gallery 2 -->
+    <section id="gallery2" class="container">
         <h2>খবর এবং মিডিয়া</h2>
         <div class="gallery-wrapper">
-            <div class="gallery-grid">
+            <div class="gallery-grid" id="grid2">
                 <a href="i1.JPG" class="gallery-item">
                     <img src="i1.JPG" alt="TV interview" loading="lazy">
                 </a>
@@ -365,17 +355,14 @@
                 <a href="v3.JPG" class="gallery-item">
                     <img src="v3.JPG" alt="Group photo" loading="lazy">
                 </a>
-                
             </div>
         </div>
     </section>
 
+
     <script>
 
-        // Select the gallery grid
-        const galleryGrid = document.querySelector('.gallery-grid');
-
-        // Function to calculate visible items dynamically based on screen size
+       // Function to calculate visible items dynamically based on screen size
         function getItemsToShow() {
             const screenWidth = window.innerWidth;
 
@@ -385,34 +372,46 @@
             return 1; // Extra small screens
         }
 
-        // Initialize variables for scrolling
-        let currentIndex = 0;
-        let itemsToShow = getItemsToShow(); // Get initial number of visible items
-        const totalItems = document.querySelectorAll('.gallery-item').length;
+        // Function to initialize scrolling for a specific gallery grid
+        function initializeGalleryScrolling(gridId) {
+            const galleryGrid = document.getElementById(gridId);
+            
+            // Initialize variables for scrolling
+            let currentIndex = 0;
+            let itemsToShow = getItemsToShow(); // Get initial number of visible items
+            const totalItems = galleryGrid.querySelectorAll('.gallery-item').length;
 
-        // Function to scroll the gallery
-        function scrollGallery() {
-            currentIndex++;
+            // Function to scroll the gallery
+            function scrollGallery() {
+                currentIndex++;
 
-            // If we've reached the end, reset to the beginning
-            if (currentIndex >= totalItems - itemsToShow + 1) {
-                currentIndex = 0;
+                // If we've reached the end, reset to the beginning
+                if (currentIndex >= totalItems - itemsToShow + 1) {
+                    currentIndex = 0;
+                }
+
+                // Calculate the offset for translation
+                const offset = -currentIndex * (100 / itemsToShow);
+
+                // Apply the transform to scroll the gallery
+                galleryGrid.style.transform = `translateX(${offset}%)`;
             }
 
-            // Calculate the offset for translation
-            const offset = -currentIndex * (100 / itemsToShow);
+            // Update `itemsToShow` dynamically on window resize
+            window.addEventListener('resize', () => {
+                itemsToShow = getItemsToShow();
+                currentIndex = Math.min(currentIndex, totalItems - itemsToShow); // Adjust current index if needed
+                scrollGallery(); // Adjust position after resizing
+            });
 
-            // Apply the transform to scroll the gallery
-            galleryGrid.style.transform = `translateX(${offset}%)`;
+            // Set an interval to scroll every 3 seconds
+            setInterval(scrollGallery, 3000);
         }
 
-        // Update `itemsToShow` dynamically on window resize
-        window.addEventListener('resize', () => {
-            itemsToShow = getItemsToShow();
-        });
+        // Initialize scrolling for both galleries
+        initializeGalleryScrolling('grid1');
+        initializeGalleryScrolling('grid2');
 
-        // Set an interval to scroll every 3 seconds
-        setInterval(scrollGallery, 3000);
     </script>
 
 
