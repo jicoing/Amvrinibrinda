@@ -119,6 +119,65 @@
             object-fit: cover; /*  Important:  Crop to fill, maintaining aspect ratio */
             display: block; /* Remove extra space below image */
         }
+        #open-graph {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .og-details h3 {
+            margin-top: 15px;
+        }
+
+        .og-details p {
+            margin: 5px 0;
+        }
+
+        .og-details img {
+            max-width: 100%;
+            height: auto;
+        }
+        .facebook-responsive {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .facebook-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Gallery Wrapper */
+        .gallery-wrapper {
+            overflow: hidden; /* Hide overflow */
+            width: 100%; /* Full width of the container */
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: flex; /* Flexbox for horizontal alignment */
+            transition: transform 0.5s ease-in-out; /* Smooth scrolling effect */
+        }
+
+        /* Gallery Item */
+        .gallery-item {
+            flex: 0 0 25%; /* Each item takes 25% of the container width (4 items visible) */
+            box-sizing: border-box; /* Include padding/border in width calculations */
+            padding: 10px; /* Optional spacing between items */
+        }
+
+        /* Fixed Size for Thumbnails */
+        .gallery-item img {
+            width: 100%; /* Ensure images fit within their container */
+            height: 150px; /* Set a fixed height for all thumbnails */
+            object-fit: cover; /* Maintain aspect ratio while covering the area */
+        }
+
+
     </style>
 </head>
 <body>
@@ -155,7 +214,7 @@
     <!-- Mission Section -->
     <section id="about" class="container">
         <h2>আমাদের প্রতিশ্রুতি</h2>
-        <p>আমরা কয়েকজন বাঙালি নারী একত্রিত হয়েছি পৌরোহিত্যের পুরুষতান্ত্রিক প্রথাকে চ্যালেঞ্জ জানাতে। আমাদের লক্ষ্য সমাজে লিঙ্গ সমতা আনা এবং নারীদের জন্য একটি নতুন দিগন্ত উন্মোচন করা। আমরা বিশ্বাস করি, ধর্ম এবং আধ্যাত্মিকতায় নারীর সমান অধিকার থাকা উচিত।</p>
+        <p>আমরা কয়েকজন বাঙালি নারী একত্রিত হয়েছি পৌরোহিত্যের পুরুষতান্ত্রিক প্রথার সঙ্গে সহযোগিতা করে একটি সমতার পরিবেশ গড়ে তুলতে। আমাদের লক্ষ্য সমাজে লিঙ্গ সমতা আনা এবং নারীদের জন্য একটি নতুন দিগন্ত উন্মোচন করা। আমরা বিশ্বাস করি, ধর্ম এবং আধ্যাত্মিকতায় নারীর সমান অধিকার থাকা উচিত।</p>
         <p>Puja has long been a powerful force for social change, giving voice to the oppressed, challenging injustice, and inspiring movements. Through its emotional depth and rhythmic expression, puja transcends barriers.</p>
         <div class="grid">
             <article>
@@ -212,35 +271,85 @@
     <!-- Gallery -->
     <section id="gallery" class="container">
         <h2>পূজার মুহূর্ত</h2>
-        <div class="gallery-grid">
-            <a href="g1.JPG" class="gallery-item">
-                <img src="g1.JPG" alt="Puja momments" loading="lazy">
-            </a>
-            <a href="g2.JPG" class="gallery-item">
-                <img src="g2.JPG" alt="Puja momments" loading="lazy">
-            </a>
-            <a href="g3.JPG" class="gallery-item">
-                <img src="g3.JPG" alt="Puja momments" loading="lazy">
-            </a>
-            <a href="g4.JPG" class="gallery-item">
-                <img src="g4.JPG" alt="Puja momments" loading="lazy">
-            </a>
-            <a href="g5.JPG" class="gallery-item">
-                <img src="g5.JPG" alt="Puja momments" loading="lazy">
-            </a>
-            
-            <a href="g7.JPG" class="gallery-item">
-                <img src="g7.JPG" alt="Puja momments" loading="lazy">
-            </a>
-            <a href="g8.JPG" class="gallery-item">
-                <img src="g8.JPG" alt="Puja momments" loading="lazy">
-            </a>
-            <a href="v4.JPG" class="gallery-item">
-                <img src="v4.JPG" alt="Group photo" loading="lazy">
-            </a>
+        <div class="gallery-wrapper">
+            <div class="gallery-grid">
+                <a href="g1.JPG" class="gallery-item">
+                    <img src="g1.JPG" alt="Puja moments" loading="lazy">
+                </a>
+                <a href="g2.JPG" class="gallery-item">
+                    <img src="g2.JPG" alt="Puja moments" loading="lazy">
+                </a>
+                <a href="g3.JPG" class="gallery-item">
+                    <img src="g3.JPG" alt="Puja moments" loading="lazy">
+                </a>
+                <a href="g4.JPG" class="gallery-item">
+                    <img src="g4.JPG" alt="Puja moments" loading="lazy">
+                </a>
+                <a href="g5.JPG" class="gallery-item">
+                    <img src="g5.JPG" alt="Puja moments" loading="lazy">
+                </a>
+                <a href="g7.JPG" class="gallery-item">
+                    <img src="g7.JPG" alt="Puja moments" loading="lazy">
+                </a>
+                <a href="g8.JPG" class="gallery-item">
+                    <img src="g8.JPG" alt="Puja moments" loading="lazy">
+                </a>
+                <a href="v4.JPG" class="gallery-item">
+                    <img src="v4.JPG" alt="Group photo" loading="lazy">
+                </a>
+                <a href="g9.PNG" class="gallery-item">
+                    <img src="g9.PNG" alt="Group photo" loading="lazy">
+                </a>
+                <a href="g10.PNG" class="gallery-item">
+                    <img src="g10.PNG" alt="Group photo" loading="lazy">
+                </a>
+                <a href="g14.PNG" class="gallery-item">
+                    <img src="g14.PNG" alt="Group photo" loading="lazy">
+                </a>
+                <a href="g11.PNG" class="gallery-item">
+                    <img src="g11.PNG" alt="Group photo" loading="lazy">
+                </a>
+                <a href="g12.PNG" class="gallery-item">
+                    <img src="g12.PNG" alt "Group photo" loading "lazy">
+                </a>
+                <a href "g13.PNG" class "gallery-item">
+                    <img src "g13.PNG" alt "Group photo" loading "lazy">
+                </a>
+            </div>
         </div>
-        
     </section>
+
+    <script>
+        // Select the gallery grid
+        const galleryGrid = document.querySelector('.gallery-grid');
+
+        // Define variables for scrolling
+        let currentIndex = 0;
+        const totalItems = document.querySelectorAll('.gallery-item').length;
+        const itemsToShow = 4; // Number of items visible at a time
+
+        // Function to scroll the gallery
+        function scrollGallery() {
+            currentIndex++;
+
+            // If we've reached the end, reset to the beginning
+            if (currentIndex >= totalItems - itemsToShow + 1) {
+                currentIndex = 0;
+            }
+
+            // Calculate the offset for translation
+            const offset = -currentIndex * (100 / itemsToShow);
+            
+            // Apply the transform to scroll the gallery
+            galleryGrid.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Set an interval to scroll every 3 seconds
+        setInterval(scrollGallery, 3000);
+    </script>
+
+
+
     <!-- Gallery -->
     <section id="gallery" class="container">
         <h2>খবর এবং মিডিয়া</h2>
@@ -256,8 +365,21 @@
             </a>
             
         </div>
+    </section>
+
+    <section id="gallery" class="container">
+        <h2>সামাজিক মাধ্যম</h2>
+        
+
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FAdvRakhiBhattacharjya%2Fposts%2Fpfbid029bwwe9g9TbLj9pxx535duGQb8HepAc2yEQfjAQNSQ73VcNK8Xm56xqqY93pxcL1Zl&show_text=true&width=500" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            
         
     </section>
+
+
+
+    
+    
 
     
 
@@ -266,7 +388,11 @@
         <h2>Join the Movement</h2>
         <div class="grid">
             
-            
+            <div>
+                <h3>Collaborate</h3>
+                <p>ইমেইল<br>
+                <a href="">amvrinibrinda@gmail.com</a></p>
+            </div>
             <div>
                 <h3>Collaborate</h3>
                 <p>ওয়াটসঅ্যাপ<br>
@@ -314,9 +440,8 @@
             <div>
                 <small>
                     আমাদের সাথে যোগাযোগ করুন:<br>
-                    <a href="https://facebook.com/Amvrinibrinda">Facebook</a> •
-                    <a href="https://instagram.com/Amvrinibrinda">Instagram</a> •
-                    <a href="https://youtube.com/Amvrinibrinda">YouTube</a>
+                    <a href="https://www.facebook.com/share/1FRgXjv2V2/">Facebook</a> •
+                    <a href="https://youtu.be/sIhMS0d4Q-I?si=v-pjNTIVI6wRmTLd">YouTube</a>
                 </small>
             </div>
         </div>
