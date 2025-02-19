@@ -91,10 +91,21 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
 
         .gallery-grid {
             columns: 3 250px;
             gap: 1rem;
+        }
+        .grid article {
+        transition: transform 0.3s ease; /* Smooth transition for the transform property */
+        }
+
+        .grid article:hover {
+        transform: translateY(-5px); /* Moves the article up by 5 pixels on hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow on hover */
         }
 
         .poem-excerpt {
@@ -111,6 +122,7 @@
 
         .gallery-item {
             display: block; /* Make the link a block-level element */
+
         }
 
         .gallery-item img {
@@ -353,7 +365,7 @@
         </div>
     </section>
 
-
+    
 
     <!-- Creators Section -->
     <section id="team" class="container">
