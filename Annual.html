@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolkata Poetry Festival | Supporters</title>
+    <style>
+    :root {
+        --background: #2c3e50;
+        --text-primary: #ced0d2;
+        --accent: #e67e22;
+        --primary: #3498db;
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--text-primary);
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .donor-tiers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .tier-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 2rem;
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tier-card:hover {
+        transform: translateY(-5px);
+    }
+
+    h3 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 0.5rem;
+    }
+
+    .donor-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .donor-list li {
+        padding: 0.8rem 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        font-size: 1.1rem;
+    }
+
+    .donor-list li:last-child {
+        border-bottom: none;
+    }
+
+    footer {
+        background-color: var(--primary);
+        color: white;
+        padding: 2rem 0;
+        margin-top: 4rem;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+    <section class="donor-section container">
+        <h2>Our 2023 Generous Supporters</h2>
+        
+        <div class="donor-tiers">
+            <div class="tier-card">
+                <h3>Visionary Partners</h3>
+                <ul class="donor-list">
+                    <li>Bengal Women's Collective</li>
+                    <li>Chatterjee Family Foundation</li>
+                    <li>Tata Social Impact Fund</li>
+                </ul>
+            </div>
+
+            <div class="tier-card">
+                <h3>Literary Champions</h3>
+                <ul class="donor-list">
+                    <li>The Poetry Foundation</li>
+                    <li>Kolkata Literary Trust</li>
+                    <li>Sen & Associates</li>
+                </ul>
+            </div>
+
+            <div class="tier-card">
+                <h3>Community Builders</h3>
+                <ul class="donor-list">
+                    <li>250+ Individual Donors</li>
+                    <li>Bangla Sahitya Parishad</li>
+                    <li>Young Entrepreneurs Circle</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
+
+</body>
+</html>
