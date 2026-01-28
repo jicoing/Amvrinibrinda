@@ -61,7 +61,6 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Remove background image from body to prevent interference */
         .container {
             background-image: url('https://github.com/jicoing/Amvrinibrinda/blob/main/floral-removebg-preview.png?raw=true');
             background-repeat: repeat;
@@ -109,7 +108,13 @@
             background-clip: text;
         }
 
-        .theme-toggle {
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle, .lang-toggle {
             background: none;
             border: 2px solid var(--primary);
             color: var(--primary);
@@ -122,12 +127,16 @@
             justify-content: center;
             font-size: 1.2rem;
             transition: all 0.3s ease;
-            margin-left: 1rem;
+            font-weight: 600;
+        }
+
+        .theme-toggle:hover, .lang-toggle:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
         }
 
         .theme-toggle:hover {
-            background: var(--primary);
-            color: white;
             transform: rotate(180deg);
         }
 
@@ -232,11 +241,6 @@
             42% { opacity: 1; transform: scale(1.05); }
             50% { opacity: 0; transform: scale(1.1); }
             100% { opacity: 0; transform: scale(1); }
-        }
-
-        @keyframes zoomInOut {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
         }
 
         .hero-content {
@@ -354,12 +358,6 @@
 
         .card:hover::before {
             transform: scaleX(1);
-        }
-
-        .card-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
         }
 
         .card-content {
@@ -569,6 +567,15 @@
             color: white;
         }
 
+        /* Language Toggle Styles */
+        [data-lang="en"] .lang-bn {
+            display: none;
+        }
+
+        [data-lang="bn"] .lang-en {
+            display: none;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -601,10 +608,20 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .nav-controls {
+                gap: 0.5rem;
+            }
+
+            .theme-toggle, .lang-toggle {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
-<body>
+<body data-lang="bn">
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -615,14 +632,19 @@
                 <span></span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">Mission</a></li>
-                <li><a href="#team">Creators</a></li>
-                <li><a href="#gallery">Moments</a></li>
-                <li><a href="#contact">Join</a></li>
+                <li><a href="#about"><span class="lang-bn">মিশন</span><span class="lang-en">Mission</span></a></li>
+                <li><a href="#team"><span class="lang-bn">সৃষ্টিকর্তা</span><span class="lang-en">Creators</span></a></li>
+                <li><a href="#gallery"><span class="lang-bn">মুহূর্ত</span><span class="lang-en">Moments</span></a></li>
+                <li><a href="#contact"><span class="lang-bn">যোগদান</span><span class="lang-en">Join</span></a></li>
             </ul>
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-                <span id="themeIcon">🌙</span>
-            </button>
+            <div class="nav-controls">
+                <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle language">
+                    <span id="langIcon">EN</span>
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                    <span id="themeIcon">🌙</span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -631,39 +653,52 @@
         <div class="hero-bg"></div>
         <div class="hero-content">
             <h1>অম্ভৃণী বৃন্দ</h1>
-            <p>Harnessing the power of puja for social transformation</p>
-            <a href="#about" class="cta-button">Discover Our Mission</a>
+            <p class="lang-bn">পূজার শক্তি ব্যবহার করে সামাজিক রূপান্তর</p>
+            <p class="lang-en">Harnessing the power of puja for social transformation</p>
+            <a href="#about" class="cta-button">
+                <span class="lang-bn">আমাদের মিশন জানুন</span>
+                <span class="lang-en">Discover Our Mission</span>
+            </a>
         </div>
     </section>
 
     <!-- Mission Section -->
     <section id="about" class="container">
         <div class="section-header">
-            <h2>আমাদের প্রতিশ্রুতি</h2>
-            <p>Creating equality through tradition and transformation</p>
+            <h2 class="lang-bn">আমাদের প্রতিশ্রুতি</h2>
+            <h2 class="lang-en">Our Commitment</h2>
+            <p class="lang-bn">ঐতিহ্য এবং রূপান্তরের মাধ্যমে সমতা তৈরি করা</p>
+            <p class="lang-en">Creating equality through tradition and transformation</p>
         </div>
         
         <p style="text-align: center; font-size: 1.1rem; max-width: 900px; margin: 0 auto 3rem;">
-            আমরা কয়েকজন বাঙালি নারী একত্রিত হয়েছি পৌরোহিত্যে পুরুষতান্ত্রিক প্রথার সঙ্গে সহযোগিতা করে একটি সমতার পরিবেশ গড়ে তুলতে। আমাদের লক্ষ্য সমাজে লিঙ্গ সমতা আনা এবং নারীদের জন্য একটি নতুন দিগন্ত উন্মোচন করা।
+            <span class="lang-bn">আমরা কয়েকজন বাঙালি নারী একত্রিত হয়েছি পৌরোহিত্যে পুরুষতান্ত্রিক প্রথার সঙ্গে সহযোগিতা করে একটি সমতার পরিবেশ গড়ে তুলতে। আমাদের লক্ষ্য সমাজে লিঙ্গ সমতা আনা এবং নারীদের জন্য একটি নতুন দিগন্ত উন্মোচন করা।</span>
+            <span class="lang-en">We are a group of Bengali women who have come together to create an environment of equality by collaborating with the patriarchal practices in priesthood. Our goal is to bring gender equality to society and open new horizons for women.</span>
         </p>
 
         <div class="card-grid">
             <div class="card">
                 <div class="card-content">
-                    <h3>মনসাপূজা</h3>
-                    <p>মনসাপূজা দিয়ে পথ চলা শ্রু কল্যানীর A-2/202 বাড়ি তে ২৭/৮/২০২১</p>
+                    <h3 class="lang-bn">মনসাপূজা</h3>
+                    <h3 class="lang-en">Manasa Puja</h3>
+                    <p class="lang-bn">মনসাপূজা দিয়ে পথ চলা শ্রু কল্যানীর A-2/202 বাড়ি তে ২৭/৮/২০২১</p>
+                    <p class="lang-en">Our journey began with Manasa Puja at A-2/202, Kalyani on August 27, 2021</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h3>দুর্গা পূজা</h3>
-                    <p>এরপর নদীয়ার চাকদহ বুড়িমাতলা তে শ্রী দুর্গা মায়ের পূজার ক্রিয়াদি সুসম্পন্ন করেছিলাম আমরা অম্ভৃনী নারীগন। ২০২১ সালে</p>
+                    <h3 class="lang-bn">দুর্গা পূজা</h3>
+                    <h3 class="lang-en">Durga Puja</h3>
+                    <p class="lang-bn">এরপর নদীয়ার চাকদহ বুড়িমাতলা তে শ্রী দুর্গা মায়ের পূজার ক্রিয়াদি সুসম্পন্ন করেছিলাম আমরা অম্ভৃনী নারীগন। ২০২১ সালে</p>
+                    <p class="lang-en">We, the women of Amvrini, successfully completed the rituals of Goddess Durga at Chakdaha Burimatla, Nadia in 2021</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h3>গণেশ পূজা</h3>
-                    <p>গণেশ বন্দনায় রত আমরা AmvriniBrinda। এভাবেই আপনাদের ভালোবাসায় ও উৎসাহে বলিয়ান হয়ে আমরা গনেশ দেবের পূজো করতে চলে এসেছিলাম Aster Gardens Complex, Rajarhat</p>
+                    <h3 class="lang-bn">গণেশ পূজা</h3>
+                    <h3 class="lang-en">Ganesh Puja</h3>
+                    <p class="lang-bn">গণেশ বন্দনায় রত আমরা AmvriniBrinda। এভাবেই আপনাদের ভালোবাসায় ও উৎসাহে বলিয়ান হয়ে আমরা গনেশ দেবের পূজো করতে চলে এসেছিলাম Aster Gardens Complex, Rajarhat</p>
+                    <p class="lang-en">Strengthened by your love and encouragement, we performed Ganesh Puja at Aster Gardens Complex, Rajarhat</p>
                 </div>
             </div>
         </div>
@@ -672,11 +707,17 @@
     <!-- Quote Section -->
     <section class="quote-section">
         <div class="quote-content">
-            <p>
+            <p class="lang-bn">
                 এসো মিলি সবে, হাতে হাত ধরি,<br>
                 নতুন সমাজ গড়ি, ভেদাভেদ পরিহরি।<br>
                 আলো এলমেলে এক পৃথিবী চাই,<br>
                 যেখানে সকলে বাঁচে, মিলেমিশে ভাই।
+            </p>
+            <p class="lang-en">
+                Let us come together, hand in hand,<br>
+                Build a new society, free from division and discrimination.<br>
+                We seek a world of mingled light,<br>
+                Where all live together in harmony and brotherhood.
             </p>
         </div>
     </section>
@@ -684,25 +725,29 @@
     <!-- Team Section -->
     <section id="team" class="container">
         <div class="section-header">
-            <h2>Our Creators</h2>
-            <p>The visionaries leading the movement</p>
+            <h2 class="lang-bn">আমাদের সৃষ্টিকর্তা</h2>
+            <h2 class="lang-en">Our Creators</h2>
+            <p class="lang-bn">আন্দোলনের নেতৃত্বদানকারী দূরদর্শী</p>
+            <p class="lang-en">The visionaries leading the movement</p>
         </div>
         
         <div class="team-grid">
             <div class="team-member">
                 <img src="v1.JPG" alt="Rakhi Bhattacharjya" loading="lazy">
                 <h3>রাখী ভট্টাচার্য</h3>
-                <p>প্রতিষ্ঠাতা ও সৃজনশীল পরিচালক</p>
-                <p>Founder & Creative Director</p>
+                <p class="lang-bn">প্রতিষ্ঠাতা ও সৃজনশীল পরিচালক</p>
+                <p class="lang-en">Founder & Creative Director</p>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section 1 -->
+    <!-- Gallery Section -->
     <section id="gallery" class="container">
         <div class="section-header">
-            <h2>পূজার মুহূর্ত</h2>
-            <p>Capturing sacred moments of transformation</p>
+            <h2 class="lang-bn">পূজার মুহূর্ত</h2>
+            <h2 class="lang-en">Sacred Moments</h2>
+            <p class="lang-bn">রূপান্তরের পবিত্র মুহূর্তগুলি ধারণ করা</p>
+            <p class="lang-en">Capturing sacred moments of transformation</p>
         </div>
         
         <div class="gallery-container">
@@ -738,8 +783,10 @@
     <!-- Media Section -->
     <section class="container">
         <div class="section-header">
-            <h2>খবর এবং মিডিয়া</h2>
-            <p>Our journey in the spotlight</p>
+            <h2 class="lang-bn">খবর এবং মিডিয়া</h2>
+            <h2 class="lang-en">News and Media</h2>
+            <p class="lang-bn">মিডিয়ায় আমাদের যাত্রা</p>
+            <p class="lang-en">Our journey in the spotlight</p>
         </div>
         
         <div class="gallery-container">
@@ -760,8 +807,10 @@
     <!-- Social Media Section -->
     <section class="container">
         <div class="section-header">
-            <h2>সামাজিক মাধ্যম</h2>
-            <p>Connect with us on social media</p>
+            <h2 class="lang-bn">সামাজিক মাধ্যম</h2>
+            <h2 class="lang-en">Social Media</h2>
+            <p class="lang-bn">সোশ্যাল মিডিয়ায় আমাদের সাথে সংযুক্ত হন</p>
+            <p class="lang-en">Connect with us on social media</p>
         </div>
         
         <div style="max-width: 800px; margin: 0 auto;">
@@ -780,17 +829,21 @@
     <!-- Contact Section -->
     <section id="contact" class="container">
         <div class="section-header">
-            <h2>Join the Movement</h2>
-            <p>Be part of the transformation</p>
+            <h2 class="lang-bn">আন্দোলনে যোগ দিন</h2>
+            <h2 class="lang-en">Join the Movement</h2>
+            <p class="lang-bn">রূপান্তরের অংশ হন</p>
+            <p class="lang-en">Be part of the transformation</p>
         </div>
         
         <div class="contact-grid">
             <div class="contact-card">
-                <h3>ইমেইল</h3>
+                <h3 class="lang-bn">ইমেইল</h3>
+                <h3 class="lang-en">Email</h3>
                 <p><a href="mailto:amvrinibrinda@gmail.com">amvrinibrinda@gmail.com</a></p>
             </div>
             <div class="contact-card">
-                <h3>ওয়াটসঅ্যাপ</h3>
+                <h3 class="lang-bn">ওয়াটসঅ্যাপ</h3>
+                <h3 class="lang-en">WhatsApp</h3>
                 <p><a href="tel:7001696081">7001696081</a></p>
             </div>
         </div>
@@ -801,7 +854,8 @@
         <div class="footer-content">
             <div>
                 <p>&copy; 2023 Amvrinibrinda</p>
-                <small>Developer: Jayanjan Mukherjee</small>
+                <small class="lang-bn">ডেভেলপার: জয়ানজন মুখার্জী</small>
+                <small class="lang-en">Developer: Jayanjan Mukherjee</small>
             </div>
             <div class="footer-links">
                 <a href="https://www.facebook.com/share/1FRgXjv2V2/">Facebook</a>
@@ -811,6 +865,19 @@
     </footer>
 
     <script>
+        // Language toggle
+        function toggleLanguage() {
+            const body = document.body;
+            const currentLang = body.getAttribute('data-lang');
+            const newLang = currentLang === 'bn' ? 'en' : 'bn';
+            const langIcon = document.getElementById('langIcon');
+            
+            body.setAttribute('data-lang', newLang);
+            localStorage.setItem('language', newLang);
+            
+            langIcon.textContent = newLang === 'bn' ? 'EN' : 'বাং';
+        }
+
         // Dark mode toggle
         function toggleTheme() {
             const html = document.documentElement;
@@ -824,13 +891,19 @@
             themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
         }
 
-        // Load saved theme on page load
+        // Load saved preferences on page load
         document.addEventListener('DOMContentLoaded', () => {
+            // Load theme
             const savedTheme = localStorage.getItem('theme') || 'light';
             const themeIcon = document.getElementById('themeIcon');
-            
             document.documentElement.setAttribute('data-theme', savedTheme);
             themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+            // Load language
+            const savedLang = localStorage.getItem('language') || 'bn';
+            const langIcon = document.getElementById('langIcon');
+            document.body.setAttribute('data-lang', savedLang);
+            langIcon.textContent = savedLang === 'bn' ? 'EN' : 'বাং';
         });
 
         // Navbar scroll effect
