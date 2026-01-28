@@ -4,15 +4,14 @@
     <link rel="icon" type="image/png" href="https://github.com/jicoing/Amvrinibrinda/blob/main/favicon1.PNG?raw=true">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="অম্ভৃণী বৃন্দ | Amvrinibrinda - Women priests in Kolkata">
+    <meta name="description" content="Advocate Rakhi Bhattacharjee - Legal Services at District Court, Nadia">
     
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jicoing.github.io/Amvrinibrinda">
-    <meta property="og:title" content="অম্ভৃণী বৃন্দ | Amvrinibrinda">
-    <meta property="og:description" content="Transforming communities through verse and virtuous action">
+    <meta property="og:title" content="Advocate Rakhi Bhattacharjee | District Court, Nadia">
+    <meta property="og:description" content="Experienced legal advocate providing comprehensive legal services in Nadia">
     <meta property="og:image" content="https://github.com/jicoing/Amvrinibrinda/blob/main/favicon1.PNG?raw=true">
 
-    <title>অম্ভৃণী বৃন্দ | Amvrinibrinda</title>
+    <title>Advocate Rakhi Bhattacharjee | District Court, Nadia</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap');
         
@@ -24,29 +23,30 @@
 
         html {
             transition: background-color 0.3s ease;
+            scroll-behavior: smooth;
         }
 
         :root {
-            --primary: #7c3848;
-            --primary-dark: #5a2835;
+            --primary: #1a4d2e;
+            --primary-dark: #0f2919;
             --accent: #d4af37;
             --text-dark: #1a1a1a;
             --text-light: #ffffff;
             --bg-light: #fafaf8;
-            --bg-glass: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.95);
             --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.15);
             --card-bg: #ffffff;
         }
 
         [data-theme="dark"] {
-            --primary: #d4af37;
-            --primary-dark: #b8941f;
-            --accent: #ffd700;
+            --primary: #2d5f3f;
+            --primary-dark: #1a4d2e;
+            --accent: #d4af37;
             --text-dark: #e0e0e0;
             --text-light: #ffffff;
             --bg-light: #0f0f0f;
-            --bg-glass: rgba(20, 20, 20, 0.85);
+            --bg-glass: rgba(20, 20, 20, 0.95);
             --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
             --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.7);
             --card-bg: #1a1a1a;
@@ -59,12 +59,6 @@
             background: var(--bg-light);
             overflow-x: hidden;
             transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .container {
-            background-image: url('https://github.com/jicoing/Amvrinibrinda/blob/main/floral-removebg-preview.png?raw=true');
-            background-repeat: repeat;
-            background-size: auto;
         }
 
         h1, h2, h3 {
@@ -100,12 +94,17 @@
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary);
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: var(--accent);
+            display: block;
         }
 
         .nav-controls {
@@ -196,7 +195,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, #0f2919 0%, #1a4d2e 100%);
         }
 
         .hero-bg {
@@ -205,42 +204,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-        }
-
-        .hero-bg::before,
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            animation: fadeSlide 12s infinite;
-        }
-
-        .hero-bg::before {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                              url('https://github.com/jicoing/Amvrinibrinda/blob/main/poetry-hero2.PNG?raw=true');
-            animation-delay: 0s;
-            z-index: 2;
-        }
-
-        .hero-bg::after {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                              url('poetry-hero1.jpg');
-            animation-delay: 6s;
-            z-index: 1;
-        }
-
-        @keyframes fadeSlide {
-            0% { opacity: 0; transform: scale(1); }
-            8% { opacity: 1; }
-            42% { opacity: 1; transform: scale(1.05); }
-            50% { opacity: 0; transform: scale(1.1); }
-            100% { opacity: 0; transform: scale(1); }
+            background-attachment: fixed;
         }
 
         .hero-content {
@@ -265,15 +233,23 @@
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             margin-bottom: 1rem;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
         .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-size: clamp(1rem, 2vw, 1.3rem);
             font-weight: 300;
             margin-bottom: 2rem;
+            opacity: 0.95;
         }
 
         .cta-button {
@@ -307,12 +283,9 @@
         }
 
         .section-header h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary);
         }
 
         .section-header p {
@@ -325,7 +298,7 @@
         /* Cards */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
@@ -337,18 +310,7 @@
             box-shadow: var(--shadow);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+            border-top: 4px solid var(--primary);
         }
 
         .card:hover {
@@ -356,12 +318,14 @@
             box-shadow: var(--shadow-hover);
         }
 
-        .card:hover::before {
-            transform: scaleX(1);
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
         }
 
         .card-content {
-            padding: 2rem;
+            padding: 2.5rem;
         }
 
         .card-content h3 {
@@ -370,59 +334,59 @@
             color: var(--primary);
         }
 
-        /* Gallery */
-        .gallery-container {
-            position: relative;
+        .card-content p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        [data-theme="dark"] .card-content p {
+            color: #bbb;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
             margin-top: 3rem;
         }
 
-        .gallery-scroll {
-            display: flex;
-            gap: 1.5rem;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 1rem 0;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent) transparent;
+        .about-image {
+            text-align: center;
         }
 
-        .gallery-scroll::-webkit-scrollbar {
-            height: 8px;
+        .about-image img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
         }
 
-        .gallery-scroll::-webkit-scrollbar-track {
-            background: transparent;
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
         }
 
-        .gallery-scroll::-webkit-scrollbar-thumb {
-            background: var(--accent);
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .credentials {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-glass);
+            border-left: 4px solid var(--accent);
             border-radius: 10px;
         }
 
-        .gallery-item {
-            flex: 0 0 auto;
-            width: 400px;
-            height: 300px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .credentials strong {
+            color: var(--primary);
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Quote */
+        /* Quote Section */
         .quote-section {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: var(--text-light);
@@ -451,63 +415,27 @@
         }
 
         .quote-content p {
-            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
             font-style: italic;
             line-height: 1.8;
-        }
-
-        /* Team */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .team-member {
-            text-align: center;
-        }
-
-        .team-member img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .team-member:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .team-member h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-member p {
-            color: #666;
-            font-size: 1.1rem;
         }
 
         /* Contact */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .contact-card {
             background: var(--card-bg);
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 20px;
             box-shadow: var(--shadow);
             text-align: center;
             transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
         }
 
         .contact-card:hover {
@@ -515,56 +443,49 @@
             box-shadow: var(--shadow-hover);
         }
 
+        .contact-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
         .contact-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--primary);
         }
 
         .contact-card a {
-            color: var(--accent);
+            color: var(--text-dark);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 1.1rem;
             transition: color 0.3s ease;
         }
 
         .contact-card a:hover {
-            color: var(--primary);
+            color: var(--accent);
+        }
+
+        .contact-card p {
+            margin: 0.5rem 0;
         }
 
         /* Footer */
         footer {
-            background: var(--text-dark);
+            background: var(--primary-dark);
             color: var(--text-light);
             padding: 3rem 5%;
             text-align: center;
         }
 
-        [data-theme="dark"] footer {
-            background: #0a0a0a;
-            border-top: 1px solid #333;
-        }
-
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
         }
 
-        .footer-links a {
-            color: var(--accent);
-            text-decoration: none;
-            margin: 0 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
+        .footer-content p {
+            margin-bottom: 0.5rem;
         }
 
         /* Language Toggle Styles */
@@ -577,6 +498,17 @@
         }
 
         /* Responsive */
+        @media (max-width: 968px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image img {
+                max-width: 300px;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -599,16 +531,6 @@
                 display: flex;
             }
 
-            .gallery-item {
-                width: 280px;
-                height: 210px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
             .nav-controls {
                 gap: 0.5rem;
             }
@@ -618,6 +540,14 @@
                 height: 35px;
                 font-size: 1rem;
             }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .logo-subtitle {
+                font-size: 0.65rem;
+            }
         }
     </style>
 </head>
@@ -625,17 +555,20 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Amvrinibrinda</div>
+            <div class="logo">
+                Advocate Rakhi Bhattacharjee
+                <span class="logo-subtitle">District Court, Nadia</span>
+            </div>
             <div class="mobile-toggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about"><span class="lang-bn">মিশন</span><span class="lang-en">Mission</span></a></li>
-                <li><a href="#team"><span class="lang-bn">সৃষ্টিকর্তা</span><span class="lang-en">Creators</span></a></li>
-                <li><a href="#gallery"><span class="lang-bn">মুহূর্ত</span><span class="lang-en">Moments</span></a></li>
-                <li><a href="#contact"><span class="lang-bn">যোগদান</span><span class="lang-en">Join</span></a></li>
+                <li><a href="#about"><span class="lang-bn">পরিচয়</span><span class="lang-en">About</span></a></li>
+                <li><a href="#services"><span class="lang-bn">সেবাসমূহ</span><span class="lang-en">Services</span></a></li>
+                <li><a href="#expertise"><span class="lang-bn">দক্ষতা</span><span class="lang-en">Expertise</span></a></li>
+                <li><a href="#contact"><span class="lang-bn">যোগাযোগ</span><span class="lang-en">Contact</span></a></li>
             </ul>
             <div class="nav-controls">
                 <button class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle language">
@@ -652,53 +585,113 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>অম্ভৃণী বৃন্দ</h1>
-            <p class="lang-bn">পূজার শক্তি ব্যবহার করে সামাজিক রূপান্তর</p>
-            <p class="lang-en">Harnessing the power of puja for social transformation</p>
-            <a href="#about" class="cta-button">
-                <span class="lang-bn">আমাদের মিশন জানুন</span>
-                <span class="lang-en">Discover Our Mission</span>
+            <h1><span class="lang-bn">অ্যাডভোকেট রাখী ভট্টাচার্য</span><span class="lang-en">Advocate Rakhi Bhattacharjee</span></h1>
+            <p class="subtitle"><span class="lang-bn">জেলা আদালত, নদীয়া</span><span class="lang-en">District Court, Nadia</span></p>
+            <p class="lang-bn">আইনি পরামর্শ এবং প্রতিনিধিত্বে আপনার বিশ্বস্ত অংশীদার</p>
+            <p class="lang-en">Your trusted partner in legal counsel and representation</p>
+            <a href="#contact" class="cta-button">
+                <span class="lang-bn">পরামর্শের জন্য যোগাযোগ করুন</span>
+                <span class="lang-en">Schedule Consultation</span>
             </a>
         </div>
     </section>
 
-    <!-- Mission Section -->
+    <!-- About Section -->
     <section id="about" class="container">
         <div class="section-header">
-            <h2 class="lang-bn">আমাদের প্রতিশ্রুতি</h2>
-            <h2 class="lang-en">Our Commitment</h2>
-            <p class="lang-bn">ঐতিহ্য এবং রূপান্তরের মাধ্যমে সমতা তৈরি করা</p>
-            <p class="lang-en">Creating equality through tradition and transformation</p>
+            <h2 class="lang-bn">পরিচয়</h2>
+            <h2 class="lang-en">About</h2>
+            <p class="lang-bn">অভিজ্ঞতা ও নিবেদনের সাথে আইনি সেবা প্রদান</p>
+            <p class="lang-en">Providing legal services with experience and dedication</p>
         </div>
         
-        <p style="text-align: center; font-size: 1.1rem; max-width: 900px; margin: 0 auto 3rem;">
-            <span class="lang-bn">আমরা কয়েকজন বাঙালি নারী একত্রিত হয়েছি পৌরোহিত্যে পুরুষতান্ত্রিক প্রথার সঙ্গে সহযোগিতা করে একটি সমতার পরিবেশ গড়ে তুলতে। আমাদের লক্ষ্য সমাজে লিঙ্গ সমতা আনা এবং নারীদের জন্য একটি নতুন দিগন্ত উন্মোচন করা।</span>
-            <span class="lang-en">We are a group of Bengali women who have come together to create an environment of equality by collaborating with the patriarchal practices in priesthood. Our goal is to bring gender equality to society and open new horizons for women.</span>
-        </p>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="v1.JPG" alt="Advocate Rakhi Bhattacharjee" loading="lazy">
+            </div>
+            <div class="about-text">
+                <h3 class="lang-bn">আইনি দক্ষতা এবং নিবেদন</h3>
+                <h3 class="lang-en">Legal Excellence and Dedication</h3>
+                
+                <p class="lang-bn">
+                    আমি অ্যাডভোকেট রাখী ভট্টাচার্য, নদীয়া জেলা আদালতে আইন ব্যবসায় নিয়োজিত। আমার লক্ষ্য হল প্রতিটি মক্কেলকে সর্বোত্তম আইনি পরামর্শ এবং সহায়তা প্রদান করা। আইনের প্রতি আমার গভীর শ্রদ্ধা এবং ন্যায়বিচারের প্রতি অঙ্গীকার আমাকে প্রতিটি মামলায় সততা ও নিষ্ঠার সাথে কাজ করতে অনুপ্রাণিত করে।
+                </p>
+                
+                <p class="lang-en">
+                    I am Advocate Rakhi Bhattacharjee, practicing law at the District Court, Nadia. My goal is to provide every client with the best legal counsel and support. My deep respect for the law and commitment to justice inspires me to work with integrity and dedication in every case.
+                </p>
 
+                <div class="credentials">
+                    <p><strong class="lang-bn">আদালত:</strong> <strong class="lang-en">Court:</strong> <span class="lang-bn">জেলা আদালত, নদীয়া</span><span class="lang-en">District Court, Nadia</span></p>
+                    <p><strong class="lang-bn">অবস্থান:</strong> <strong class="lang-en">Location:</strong> <span class="lang-bn">নদীয়া, পশ্চিমবঙ্গ</span><span class="lang-en">Nadia, West Bengal</span></p>
+                    <p><strong class="lang-bn">বিশেষত্ব:</strong> <strong class="lang-en">Specialization:</strong> <span class="lang-bn">দেওয়ানি ও ফৌজদারি মামলা</span><span class="lang-en">Civil & Criminal Law</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container">
+        <div class="section-header">
+            <h2 class="lang-bn">আইনি সেবাসমূহ</h2>
+            <h2 class="lang-en">Legal Services</h2>
+            <p class="lang-bn">বিস্তৃত আইনি সমাধান প্রদান</p>
+            <p class="lang-en">Comprehensive legal solutions tailored to your needs</p>
+        </div>
+        
         <div class="card-grid">
             <div class="card">
                 <div class="card-content">
-                    <h3 class="lang-bn">মনসাপূজা</h3>
-                    <h3 class="lang-en">Manasa Puja</h3>
-                    <p class="lang-bn">মনসাপূজা দিয়ে পথ চলা শ্রু কল্যানীর A-2/202 বাড়ি তে ২৭/৮/২০২১</p>
-                    <p class="lang-en">Our journey began with Manasa Puja at A-2/202, Kalyani on August 27, 2021</p>
+                    <div class="card-icon">⚖️</div>
+                    <h3 class="lang-bn">দেওয়ানি মামলা</h3>
+                    <h3 class="lang-en">Civil Litigation</h3>
+                    <p class="lang-bn">সম্পত্তি বিরোধ, চুক্তি সংক্রান্ত মামলা, পারিবারিক আইন এবং অন্যান্য দেওয়ানি বিষয়ে বিশেষজ্ঞ পরামর্শ ও প্রতিনিধিত্ব।</p>
+                    <p class="lang-en">Expert counsel and representation in property disputes, contract matters, family law, and other civil matters.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h3 class="lang-bn">দুর্গা পূজা</h3>
-                    <h3 class="lang-en">Durga Puja</h3>
-                    <p class="lang-bn">এরপর নদীয়ার চাকদহ বুড়িমাতলা তে শ্রী দুর্গা মায়ের পূজার ক্রিয়াদি সুসম্পন্ন করেছিলাম আমরা অম্ভৃনী নারীগন। ২০২১ সালে</p>
-                    <p class="lang-en">We, the women of Amvrini, successfully completed the rituals of Goddess Durga at Chakdaha Burimatla, Nadia in 2021</p>
+                    <div class="card-icon">🛡️</div>
+                    <h3 class="lang-bn">ফৌজদারি প্রতিরক্ষা</h3>
+                    <h3 class="lang-en">Criminal Defense</h3>
+                    <p class="lang-bn">ফৌজদারি মামলায় শক্তিশালী আইনি প্রতিরক্ষা, জামিন আবেদন এবং আপনার অধিকার রক্ষায় সম্পূর্ণ সহায়তা।</p>
+                    <p class="lang-en">Strong legal defense in criminal cases, bail applications, and complete support in protecting your rights.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h3 class="lang-bn">গণেশ পূজা</h3>
-                    <h3 class="lang-en">Ganesh Puja</h3>
-                    <p class="lang-bn">গণেশ বন্দনায় রত আমরা AmvriniBrinda। এভাবেই আপনাদের ভালোবাসায় ও উৎসাহে বলিয়ান হয়ে আমরা গনেশ দেবের পূজো করতে চলে এসেছিলাম Aster Gardens Complex, Rajarhat</p>
-                    <p class="lang-en">Strengthened by your love and encouragement, we performed Ganesh Puja at Aster Gardens Complex, Rajarhat</p>
+                    <div class="card-icon">👨‍👩‍👧‍👦</div>
+                    <h3 class="lang-bn">পারিবারিক আইন</h3>
+                    <h3 class="lang-en">Family Law</h3>
+                    <p class="lang-bn">বিবাহ, বিবাহবিচ্ছেদ, সন্তানের হেফাজত, ভরণপোষণ এবং অন্যান্য পারিবারিক বিষয়ে সংবেদনশীল আইনি সহায়তা।</p>
+                    <p class="lang-en">Sensitive legal assistance in marriage, divorce, child custody, maintenance, and other family matters.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">🏠</div>
+                    <h3 class="lang-bn">সম্পত্তি আইন</h3>
+                    <h3 class="lang-en">Property Law</h3>
+                    <p class="lang-bn">সম্পত্তি ক্রয়-বিক্রয়, দলিল যাচাই, সম্পত্তি বিরোধ নিষ্পত্তি এবং সম্পত্তি সংক্রান্ত সকল আইনি পরামর্শ।</p>
+                    <p class="lang-en">Property transactions, deed verification, property dispute resolution, and all property-related legal counsel.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">📄</div>
+                    <h3 class="lang-bn">চুক্তি ও নথিপত্র</h3>
+                    <h3 class="lang-en">Contracts & Documentation</h3>
+                    <p class="lang-bn">বিভিন্ন চুক্তিপত্র প্রস্তুত, পর্যালোচনা এবং আইনি নথি তৈরিতে দক্ষ সহায়তা প্রদান।</p>
+                    <p class="lang-en">Expert assistance in drafting, reviewing contracts, and preparing legal documents.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">💼</div>
+                    <h3 class="lang-bn">আইনি পরামর্শ</h3>
+                    <h3 class="lang-en">Legal Consultation</h3>
+                    <p class="lang-bn">যেকোনো আইনি বিষয়ে বিশেষজ্ঞ পরামর্শ এবং আপনার অধিকার ও কর্তব্য সম্পর্কে সঠিক দিকনির্দেশনা।</p>
+                    <p class="lang-en">Expert advice on any legal matter and proper guidance about your rights and responsibilities.</p>
                 </div>
             </div>
         </div>
@@ -708,121 +701,77 @@
     <section class="quote-section">
         <div class="quote-content">
             <p class="lang-bn">
-                এসো মিলি সবে, হাতে হাত ধরি,<br>
-                নতুন সমাজ গড়ি, ভেদাভেদ পরিহরি।<br>
-                আলো এলমেলে এক পৃথিবী চাই,<br>
-                যেখানে সকলে বাঁচে, মিলেমিশে ভাই।
+                "ন্যায়বিচার শুধু একটি লক্ষ্য নয়, এটি একটি দায়িত্ব। প্রতিটি মক্কেলের অধিকার রক্ষায় আমি সম্পূর্ণ নিবেদিত।"
             </p>
             <p class="lang-en">
-                Let us come together, hand in hand,<br>
-                Build a new society, free from division and discrimination.<br>
-                We seek a world of mingled light,<br>
-                Where all live together in harmony and brotherhood.
+                "Justice is not just a goal, it is a responsibility. I am fully dedicated to protecting the rights of every client."
             </p>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="container">
+    <!-- Expertise Section -->
+    <section id="expertise" class="container">
         <div class="section-header">
-            <h2 class="lang-bn">আমাদের সৃষ্টিকর্তা</h2>
-            <h2 class="lang-en">Our Creators</h2>
-            <p class="lang-bn">আন্দোলনের নেতৃত্বদানকারী দূরদর্শী</p>
-            <p class="lang-en">The visionaries leading the movement</p>
+            <h2 class="lang-bn">কেন আমাকে বেছে নেবেন</h2>
+            <h2 class="lang-en">Why Choose Me</h2>
+            <p class="lang-bn">আপনার আইনি প্রয়োজনে বিশ্বস্ত সঙ্গী</p>
+            <p class="lang-en">Your trusted partner for legal needs</p>
         </div>
         
-        <div class="team-grid">
-            <div class="team-member">
-                <img src="v1.JPG" alt="Rakhi Bhattacharjya" loading="lazy">
-                <h3 class="lang-bn">রাখী ভট্টাচার্য</h3>
-                <h3 class="lang-en">Rakhi Bhattacharjee</h3>
-                <p class="lang-bn">প্রতিষ্ঠাতা ও সৃজনশীল পরিচালক</p>
-                <p class="lang-en">Founder & Creative Director</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="container">
-        <div class="section-header">
-            <h2 class="lang-bn">পূজার মুহূর্ত</h2>
-            <h2 class="lang-en">Sacred Moments</h2>
-            <p class="lang-bn">রূপান্তরের পবিত্র মুহূর্তগুলি ধারণ করা</p>
-            <p class="lang-en">Capturing sacred moments of transformation</p>
-        </div>
-        
-        <div class="gallery-container">
-            <div class="gallery-scroll">
-                <div class="gallery-item">
-                    <img src="g1.JPG" alt="Puja moments" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="g2.JPG" alt="Puja moments" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="g3.JPG" alt="Puja moments" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="g4.JPG" alt="Puja moments" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="g5.JPG" alt="Puja moments" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="g7.JPG" alt="Puja moments" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="g8.JPG" alt="Puja moments" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="v4.JPG" alt="Group photo" loading="lazy">
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">🎯</div>
+                    <h3 class="lang-bn">অভিজ্ঞতা ও দক্ষতা</h3>
+                    <h3 class="lang-en">Experience & Expertise</h3>
+                    <p class="lang-bn">নদীয়া জেলা আদালতে বহু বছরের অভিজ্ঞতা এবং বিভিন্ন ধরনের মামলায় সফল প্রতিনিধিত্ব।</p>
+                    <p class="lang-en">Years of experience at Nadia District Court with successful representation in various types of cases.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Media Section -->
-    <section class="container">
-        <div class="section-header">
-            <h2 class="lang-bn">খবর এবং মিডিয়া</h2>
-            <h2 class="lang-en">News and Media</h2>
-            <p class="lang-bn">মিডিয়ায় আমাদের যাত্রা</p>
-            <p class="lang-en">Our journey in the spotlight</p>
-        </div>
-        
-        <div class="gallery-container">
-            <div class="gallery-scroll">
-                <div class="gallery-item">
-                    <img src="i1.JPG" alt="TV interview" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="v2.JPG" alt="Newspaper article" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="v3.JPG" alt="Group photo" loading="lazy">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">🤝</div>
+                    <h3 class="lang-bn">ব্যক্তিগত মনোযোগ</h3>
+                    <h3 class="lang-en">Personal Attention</h3>
+                    <p class="lang-bn">প্রতিটি মক্কেল এবং তাদের মামলার জন্য ব্যক্তিগত মনোযোগ এবং কাস্টমাইজড আইনি কৌশল।</p>
+                    <p class="lang-en">Personal attention to every client and customized legal strategy for their cases.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Social Media Section -->
-    <section class="container">
-        <div class="section-header">
-            <h2 class="lang-bn">সামাজিক মাধ্যম</h2>
-            <h2 class="lang-en">Social Media</h2>
-            <p class="lang-bn">সোশ্যাল মিডিয়ায় আমাদের সাথে সংযুক্ত হন</p>
-            <p class="lang-en">Connect with us on social media</p>
-        </div>
-        
-        <div style="max-width: 800px; margin: 0 auto;">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; box-shadow: var(--shadow);">
-                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D2566571033498746&show_text=false&width=560&t=0" 
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
-                        scrolling="no" 
-                        frameborder="0" 
-                        allowfullscreen="true" 
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                </iframe>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">💬</div>
+                    <h3 class="lang-bn">স্বচ্ছ যোগাযোগ</h3>
+                    <h3 class="lang-en">Clear Communication</h3>
+                    <p class="lang-bn">আইনি প্রক্রিয়া সম্পর্কে স্পষ্ট ব্যাখ্যা এবং মামলার প্রতিটি পর্যায়ে নিয়মিত আপডেট।</p>
+                    <p class="lang-en">Clear explanation of legal processes and regular updates at every stage of the case.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">✅</div>
+                    <h3 class="lang-bn">নৈতিকতা ও সততা</h3>
+                    <h3 class="lang-en">Ethics & Integrity</h3>
+                    <p class="lang-bn">সর্বোচ্চ নৈতিক মান বজায় রেখে সততা এবং স্বচ্ছতার সাথে আইনি সেবা প্রদান।</p>
+                    <p class="lang-en">Providing legal services with honesty and transparency, maintaining the highest ethical standards.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">📞</div>
+                    <h3 class="lang-bn">সহজলভ্যতা</h3>
+                    <h3 class="lang-en">Accessibility</h3>
+                    <p class="lang-bn">প্রয়োজনের সময় সহজেই যোগাযোগ করতে পারবেন এবং দ্রুত সাড়া পাবেন।</p>
+                    <p class="lang-en">Easy to reach when needed and prompt response to your concerns.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon">💪</div>
+                    <h3 class="lang-bn">শক্তিশালী প্রতিনিধিত্ব</h3>
+                    <h3 class="lang-en">Strong Representation</h3>
+                    <p class="lang-bn">আদালতে আপনার স্বার্থ রক্ষায় দৃঢ় এবং কার্যকর আইনি প্রতিনিধিত্ব।</p>
+                    <p class="lang-en">Strong and effective legal representation to protect your interests in court.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -830,37 +779,67 @@
     <!-- Contact Section -->
     <section id="contact" class="container">
         <div class="section-header">
-            <h2 class="lang-bn">আন্দোলনে যোগ দিন</h2>
-            <h2 class="lang-en">Join the Movement</h2>
-            <p class="lang-bn">রূপান্তরের অংশ হন</p>
-            <p class="lang-en">Be part of the transformation</p>
+            <h2 class="lang-bn">যোগাযোগ করুন</h2>
+            <h2 class="lang-en">Get in Touch</h2>
+            <p class="lang-bn">আইনি পরামর্শের জন্য আজই যোগাযোগ করুন</p>
+            <p class="lang-en">Contact today for legal consultation</p>
         </div>
         
         <div class="contact-grid">
             <div class="contact-card">
+                <div class="contact-card-icon">📧</div>
                 <h3 class="lang-bn">ইমেইল</h3>
                 <h3 class="lang-en">Email</h3>
-                <p><a href="mailto:amvrinibrinda@gmail.com">amvrinibrinda@gmail.com</a></p>
+                <a href="mailto:amvrinibrinda@gmail.com">amvrinibrinda@gmail.com</a>
             </div>
             <div class="contact-card">
-                <h3 class="lang-bn">ওয়াটসঅ্যাপ</h3>
-                <h3 class="lang-en">WhatsApp</h3>
-                <p><a href="tel:7001696081">7001696081</a></p>
+                <div class="contact-card-icon">📱</div>
+                <h3 class="lang-bn">ফোন / হোয়াটসঅ্যাপ</h3>
+                <h3 class="lang-en">Phone / WhatsApp</h3>
+                <a href="tel:7001696081">+91 7001696081</a>
             </div>
+            <div class="contact-card">
+                <div class="contact-card-icon">🏛️</div>
+                <h3 class="lang-bn">অফিস</h3>
+                <h3 class="lang-en">Office</h3>
+                <p class="lang-bn">জেলা আদালত, নদীয়া<br>পশ্চিমবঙ্গ, ভারত</p>
+                <p class="lang-en">District Court, Nadia<br>West Bengal, India</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; padding: 2.5rem; background: var(--card-bg); border-radius: 20px; box-shadow: var(--shadow); text-align: center; border-top: 4px solid var(--primary);">
+            <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.8rem;">
+                <span class="lang-bn">পরামর্শ নির্ধারণ করুন</span>
+                <span class="lang-en">Schedule a Consultation</span>
+            </h3>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                <span class="lang-bn">আপনার আইনি সমস্যা সমাধানে আমি সাহায্য করতে প্রস্তুত। আজই যোগাযোগ করুন এবং একটি পরামর্শ সেশন নির্ধারণ করুন।</span>
+                <span class="lang-en">I am ready to help solve your legal problems. Contact today to schedule a consultation session.</span>
+            </p>
+            <a href="tel:7001696081" class="cta-button">
+                <span class="lang-bn">এখনই কল করুন</span>
+                <span class="lang-en">Call Now</span>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div>
-                <p>&copy; 2023 Amvrinibrinda</p>
-                <small class="lang-bn">ডেভেলপার: জয়ানজন মুখার্জী</small>
-                <small class="lang-en">Developer: Jayanjan Mukherjee</small>
-            </div>
-            <div class="footer-links">
-                <a href="https://www.facebook.com/share/1FRgXjv2V2/">Facebook</a>
-                <a href="https://youtu.be/sIhMS0d4Q-I?si=v-pjNTIVI6wRmTLd">YouTube</a>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">
+                <strong>Advocate Rakhi Bhattacharjee</strong><br>
+                <span class="lang-bn">জেলা আদালত, নদীয়া</span>
+                <span class="lang-en">District Court, Nadia</span>
+            </p>
+            <p>&copy; 2024 <span class="lang-bn">সর্বস্বত্ব সংরক্ষিত</span><span class="lang-en">All Rights Reserved</span></p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                <span class="lang-bn">ওয়েবসাইট ডেভেলপার: জয়ানজন মুখার্জী</span>
+                <span class="lang-en">Website Developer: Jayanjan Mukherjee</span>
+            </p>
+            <div style="margin-top: 2rem;">
+                <a href="Amvrinibrinda.html" style="display: inline-block; padding: 0.8rem 2rem; background: var(--accent); color: #1a1a1a; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);">
+                    Amvrinibrinda
+                </a>
             </div>
         </div>
     </footer>
