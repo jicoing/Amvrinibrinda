@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: jicoing/Amvrinibrinda
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    files:
+      - name: "posts"
+        label: "Blog Posts"
+        file: "blog/posts.json"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Cover Image", name: "image", widget: "image" }
+              - { label: "Date", name: "date", widget: "datetime" }
+              - { label: "Content", name: "content", widget: "markdown" }

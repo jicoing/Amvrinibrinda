@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+</head>
+<body>
+
+<h1>Blog</h1>
+<div id="blog"></div>
+
+<script>
+fetch('/blog/posts.json')
+  .then(r => r.json())
+  .then(data => {
+    const blog = document.getElementById('blog');
+    data.posts.slice().reverse().forEach(p => {
+      blog.innerHTML += `
+        <article>
+          <img src="${p.image}" width="300">
+          <h2>${p.title}</h2>
+          <p>${new Date(p.date).toDateString()}</p>
+          <a href="post.html?slug=${p.slug}">Read more</a>
+        </article>
+        <hr>
+      `;
+    });
+  });
+</script>
+
+</body>
+</html>
