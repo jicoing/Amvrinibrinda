@@ -582,7 +582,7 @@
         }
     </style>
 </head>
-<body data-lang="bn">
+<body data-lang="en">
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -934,7 +934,7 @@
             themeIcon.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
             // Load language
-            const savedLang = localStorage.getItem('language') || 'bn';
+            const savedLang = localStorage.getItem('language') || 'en';
             const langIcon = document.getElementById('langIcon');
             document.body.setAttribute('data-lang', savedLang);
             langIcon.textContent = savedLang === 'bn' ? 'EN' : 'বাং';
