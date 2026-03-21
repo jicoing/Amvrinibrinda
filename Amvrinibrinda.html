@@ -533,6 +533,28 @@
 
         .footer-links a:hover { color: white; }
 
+        /* Footer developer link */
+        .dev-link {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .dev-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .dev-link:hover::after {
+            width: 100%;
+        }
+
         /* Language Toggle */
         [data-lang="en"] .lang-bn { display: none; }
         [data-lang="bn"] .lang-en { display: none; }
@@ -897,8 +919,8 @@
         <div class="footer-content">
             <div>
                 <p>&copy; 2023 Amvrinibrinda</p>
-                <small class="lang-bn">ডেভেলপার: jicoing</small>
-                <small class="lang-en">Developer: jicoing</small>
+                <small class="lang-bn">ডেভেলপার: <a href="https://jicoing.github.io/komlalebu/" target="_blank" rel="noopener noreferrer" class="dev-link">jicoing</a></small>
+                <small class="lang-en">Developer: <a href="https://jicoing.github.io/komlalebu/" target="_blank" rel="noopener noreferrer" class="dev-link">jicoing</a></small>
             </div>
             <div class="footer-links">
                 <a href="https://www.facebook.com/share/1FRgXjv2V2/">Facebook</a>
